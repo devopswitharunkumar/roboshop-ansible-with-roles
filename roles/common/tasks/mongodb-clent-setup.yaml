@@ -10,7 +10,7 @@
 
 #for catalogue module
 - name: Check catalogue entries count
-  ansible.builtin.shell: mongo --host mongodb.devopswitharun.online 'db=db.getSiblingDB("catalogue"); db.products.count()'
+  ansible.builtin.shell: mongo --host mongodb.devopswitharun.online --quiet --eval 'db=db.getSiblingDB("catalogue"); db.products.count()'
   register: products_count
   when: component == "catalogue"
 
