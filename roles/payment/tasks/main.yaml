@@ -1,0 +1,20 @@
+- name: Import Common Role where setup tasks present  
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yaml
+
+- name: Import Common Role where Python installation tasks present  
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python-setup.yaml          #nodejs or nodejs.yaml automatically recognise
+
+
+- name: Import Common Role for systemd_service tasks present  
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd_service.yaml
+
+
+
+
+
