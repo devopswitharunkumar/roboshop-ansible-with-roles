@@ -18,6 +18,11 @@
     name: common
     tasks_from: systemd_service.yaml
 
+- name: if new version of code comes  
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: new-deployment.yaml
+
 
 
 
